@@ -1,0 +1,106 @@
+:root {
+    color-scheme: light dark;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+h1 {
+    font-size: 1.2rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+label, input, textarea {
+    font-size: .8rem;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    width: min(1200px, 100%);
+    margin: 2rem auto;
+    padding-inline: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (width < 850px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (width < 550px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.grid > *:first-child,
+.grid > *:last-child,
+.grid > *:nth-last-child(2) {
+    grid-column: span 3;
+}
+
+@media (width < 850px) {
+    .grid > *:first-child,
+    .grid > *:last-child,
+    .grid > *:nth-last-child(2) {
+        grid-column: span 2;
+    }
+}
+
+@media (width < 550px) {
+    .grid > *:first-child,
+    .grid > *:last-child,
+    .grid > *:nth-last-child(2) {
+        grid-column: span 1;
+    }
+}
+
+#texto_generado {
+    background-color: rgb(34, 203, 85);
+    color: white;
+    padding: 2rem;
+    border-radius: .5rem;
+}
+
+input[type="text"], textarea {
+    padding: .5rem;
+    min-width: 100%;
+    width: 100%;
+    border-radius: .5rem;
+    border: 2px solid rgb(185, 185, 185);
+    margin-top: 1rem;
+    resize: none;
+}
+
+#textoGeneradoContainer {
+    position: relative;
+    flex-basis: 100%;
+}
+
+#copiar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    background-color: black;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    color: white;
+}
